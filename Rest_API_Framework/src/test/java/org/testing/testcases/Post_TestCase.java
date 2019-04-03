@@ -6,18 +6,24 @@ import java.util.Properties;
 import org.testing.teststeps.HTTPMethods;
 import org.testing.utilities.PropertiesLoad;
 import org.testing.utilities.ResponseValidation;
+import org.testng.annotations.Test;
 
 import com.jayway.restassured.response.Response;
 
-public class TC_001 {
+public class Post_TestCase {
 
-	public void firstTestCase() throws IOException {
+	@Test
+	public String firstTestCase() throws IOException {
 		
 		Properties prop = PropertiesLoad.propLoad();
 		HTTPMethods httpMet = new HTTPMethods();
 		Response res = httpMet.postRequest(prop);
 		ResponseValidation resVal = new ResponseValidation(res);
 		resVal.responseValidate(201, "application/json; charset=utf-8");
-		
+		/*
+		 * System.out.println(res.asString()); System.out.println(res.getStatusCode());
+		 * System.out.println(res.getContentType());
+		 */
+		return resVal.responseParse("id");		
 	}
 }
