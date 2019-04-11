@@ -16,7 +16,7 @@ public class HTTPMethods {
 	public Response postRequest(Properties pr) {
 
 		Payload pload = new Payload();
-		pload.setId(98766789);
+		pload.setId(6543);
 		pload.setAuthor("Shubham123456");
 		pload.setTitle("Content Writer");
 

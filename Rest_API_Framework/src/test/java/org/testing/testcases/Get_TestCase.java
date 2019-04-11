@@ -20,7 +20,9 @@ public class Get_TestCase {
 		Properties prop = PropertiesLoad.propLoad();
 		HTTPMethods httpMet = new HTTPMethods();
 		Post_TestCase tc1 = new Post_TestCase();
-		String getId=tc1.firstTestCase();
+		
+		Post_TestCase postObj = new Post_TestCase();
+		String getId=postObj.firstTestCase();
 		Response res = httpMet.getRequest(prop,getId);
 		System.out.println(res.asString());		
 	}
