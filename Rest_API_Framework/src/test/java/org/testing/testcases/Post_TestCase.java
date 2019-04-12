@@ -3,6 +3,7 @@ package org.testing.testcases;
 import java.io.IOException;
 import java.util.Properties;
 
+import org.json.simple.parser.ParseException;
 import org.testing.teststeps.HTTPMethods;
 import org.testing.utilities.PropertiesLoad;
 import org.testing.utilities.ResponseValidation;
@@ -13,7 +14,7 @@ import com.jayway.restassured.response.Response;
 public class Post_TestCase {
 
 	@Test
-	public String firstTestCase() throws IOException {
+	public String firstTestCase() throws IOException, ParseException {
 		
 		Properties prop = PropertiesLoad.propLoad();
 		HTTPMethods httpMet = new HTTPMethods();
